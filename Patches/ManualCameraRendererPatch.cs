@@ -6,8 +6,9 @@ namespace NoLostSignal.Patches
     public class ManualCameraRendererPatch
     {
         [HarmonyPatch("CheckIfPlayerIsInCaves")]
+        [HarmonyPatch("CheckIfPlayerIsInCavesInstantly")]
         [HarmonyPrefix]
-        private static bool CheckIfPlayerIsInCavesPatch(ManualCameraRenderer __instance)
+        private static bool CheckIfPlayerIsInCavesPatch()
         {
             return false;
         }
